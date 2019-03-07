@@ -15,7 +15,7 @@
  */
 package com.fernandocejas.android10.sample.data.net;
 
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import java.io.IOException;

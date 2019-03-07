@@ -1,8 +1,10 @@
 package com.fernandocejas.android10.sample.presentation.view.activity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
-import butterknife.Bind;
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.fernandocejas.android10.sample.presentation.R;
@@ -12,7 +14,7 @@ import com.fernandocejas.android10.sample.presentation.R;
  */
 public class MainActivity extends BaseActivity {
 
-  @Bind(R.id.btn_LoadData) Button btn_LoadData;
+  @BindView(R.id.btn_LoadData) Button btn_LoadData;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {

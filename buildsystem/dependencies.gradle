@@ -1,36 +1,37 @@
 allprojects {
   repositories {
     jcenter()
+    google()
   }
 }
 
 ext {
   //Android
-  androidBuildToolsVersion = "24.0.1"
-  androidMinSdkVersion = 15
-  androidTargetSdkVersion = 21
-  androidCompileSdkVersion = 21
+  androidBuildToolsVersion = "28.0.3"
+  androidMinSdkVersion = 26
+  androidTargetSdkVersion = 28
+  androidCompileSdkVersion = 28
 
   //Libraries
   daggerVersion = '2.8'
-  butterKnifeVersion = '7.0.1'
-  recyclerViewVersion = '21.0.3'
+  butterKnifeVersion = '10.1.0'
+  recyclerViewVersion = '1.0.0-beta01'
   rxJavaVersion = '2.0.2'
   rxAndroidVersion = '2.0.1'
   javaxAnnotationVersion = '1.0'
   javaxInjectVersion = '1'
   gsonVersion = '2.3'
   okHttpVersion = '2.5.0'
-  androidAnnotationsVersion = '21.0.3'
+  androidAnnotationsVersion = '1.0.0-beta01'
   arrowVersion = '1.0.0'
 
   //Testing
   robolectricVersion = '3.1.1'
   jUnitVersion = '4.12'
-  assertJVersion = '1.7.1'
+  assertJVersion = '3.12.1'
   mockitoVersion = '1.9.5'
   dexmakerVersion = '1.0'
-  espressoVersion = '2.0'
+  espressoVersion = '3.1.0-alpha4'
   testingSupportLibVersion = '0.1'
 
   //Development
@@ -40,7 +41,8 @@ ext {
       daggerCompiler:     "com.google.dagger:dagger-compiler:${daggerVersion}",
       dagger:             "com.google.dagger:dagger:${daggerVersion}",
       butterKnife:        "com.jakewharton:butterknife:${butterKnifeVersion}",
-      recyclerView:       "com.android.support:recyclerview-v7:${recyclerViewVersion}",
+      bkCompiler:         "com.jakewharton:butterknife-compiler:${butterKnifeVersion}",
+      recyclerView:       "androidx.recyclerview:recyclerview:${recyclerViewVersion}",
       rxJava:             "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
       rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}"
@@ -50,7 +52,7 @@ ext {
       mockito:            "org.mockito:mockito-core:${mockitoVersion}",
       dexmaker:           "com.google.dexmaker:dexmaker:${dexmakerVersion}",
       dexmakerMockito:    "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}",
-      espresso:           "com.android.support.test.espresso:espresso-core:${espressoVersion}",
+      espresso: "androidx.test.espresso:espresso-core:${espressoVersion}",
       testingSupportLib:  "com.android.support.test:testing-support-lib:${testingSupportLibVersion}",
   ]
 
@@ -76,7 +78,7 @@ ext {
       rxAndroid:          "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
       javaxAnnotation:    "javax.annotation:jsr250-api:${javaxAnnotationVersion}",
       javaxInject:        "javax.inject:javax.inject:${javaxInjectVersion}",
-      androidAnnotations: "com.android.support:support-annotations:${androidAnnotationsVersion}"
+      androidAnnotations: "androidx.annotation:annotation:${androidAnnotationsVersion}"
   ]
 
   dataTestDependencies = [

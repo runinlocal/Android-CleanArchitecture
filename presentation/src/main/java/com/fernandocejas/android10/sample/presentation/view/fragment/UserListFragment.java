@@ -8,13 +8,14 @@ package com.fernandocejas.android10.sample.presentation.view.fragment;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.RelativeLayout;
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.fernandocejas.android10.sample.presentation.R;
@@ -42,10 +43,10 @@ public class UserListFragment extends BaseFragment implements UserListView {
   @Inject UserListPresenter userListPresenter;
   @Inject UsersAdapter usersAdapter;
 
-  @Bind(R.id.rv_users) RecyclerView rv_users;
-  @Bind(R.id.rl_progress) RelativeLayout rl_progress;
-  @Bind(R.id.rl_retry) RelativeLayout rl_retry;
-  @Bind(R.id.bt_retry) Button bt_retry;
+  @BindView(R.id.rv_users) RecyclerView rv_users;
+  @BindView(R.id.rl_progress) RelativeLayout rl_progress;
+  @BindView(R.id.rl_retry) RelativeLayout rl_retry;
+  @BindView(R.id.bt_retry) Button bt_retry;
 
   private UserListListener userListListener;
 
@@ -94,7 +95,6 @@ public class UserListFragment extends BaseFragment implements UserListView {
   @Override public void onDestroyView() {
     super.onDestroyView();
     rv_users.setAdapter(null);
-    ButterKnife.unbind(this);
   }
 
   @Override public void onDestroy() {
